@@ -38,4 +38,5 @@ public class DiscountService {
 
         return DiscountType.ZERO.toString();
     }
+
 }

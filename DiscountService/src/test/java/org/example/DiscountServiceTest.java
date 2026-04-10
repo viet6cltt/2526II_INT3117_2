@@ -48,6 +48,30 @@ public class DiscountServiceTest {
     //     assertEquals(expected, service.getDiscount(totalAmount, score, isHoliday));
     // }
 
+    // @ParameterizedTest
+    // @CsvSource({
+    //         "-1, 100, false, INVALID",
+
+    //         "1200000, 1000, false, 20%",
+    //         "700000, 1000, false, 15%",
+    //         "300000, 1000, false, 10%",
+
+    //         "1200000, 700, false, 15%",
+    //         "700000, 700, false, 10%",
+    //         "300000, 700, false, 5%",
+
+    //         "1200000, 300, true, 10%",
+    //         "1200000, 300, false, 5%",
+
+    //         "700000, 300, true, 5%",
+    //         "700000, 300, false, 0%",
+
+    //         "300000, 300, false, 0%"
+    // })
+    // void testControlFlow(double totalAmount, int score, boolean isHoliday, String expected) {
+    //     assertEquals(expected, service.getDiscount(totalAmount, score, isHoliday));
+    // }
+
     @ParameterizedTest
     @CsvSource({
             "-1, 100, false, INVALID",
@@ -68,7 +92,7 @@ public class DiscountServiceTest {
 
             "300000, 300, false, 0%"
     })
-    void testControlFlow(double totalAmount, int score, boolean isHoliday, String expected) {
+    void testDataFlow(double totalAmount, int score, boolean isHoliday, String expected) {
         assertEquals(expected, service.getDiscount(totalAmount, score, isHoliday));
     }
 }
